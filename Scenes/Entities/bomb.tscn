@@ -1,15 +1,28 @@
 [gd_scene format=3 uid="uid://3myusvccu3rf"]
 
 [ext_resource type="Texture2D" uid="uid://cgt2rgrqviv08" path="res://Assets/Bullet.png" id="1_4jre5"]
+[ext_resource type="Script" uid="uid://c7q4jf0ukk2ae" path="res://Scenes/Entities/bomb.gd" id="1_q7i26"]
+[ext_resource type="Texture2D" uid="uid://nhrawli717hj" path="res://Assets/shaddow.png" id="2_1h38g"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5pvuw"]
+radius = 9.0
+height = 28.0
 
-[node name="RigidBody2D" type="RigidBody2D" unique_id=1874907227]
+[node name="bomb" type="Area2D" unique_id=1316951286]
+collision_layer = 4
+script = ExtResource("1_q7i26")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=830623862]
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1271981538]
+position = Vector2(5.437501, -25.5625)
+scale = Vector2(0.29003906, 0.29003906)
+texture = ExtResource("2_1h38g")
+
+[node name="BombSprite" type="Sprite2D" parent="." unique_id=830623862]
 position = Vector2(-8.940697e-08, -3.5762787e-07)
 scale = Vector2(0.15625, 0.1171875)
 texture = ExtResource("1_4jre5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=439488974]
 shape = SubResource("CapsuleShape2D_5pvuw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

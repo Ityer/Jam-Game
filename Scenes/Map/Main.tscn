@@ -56,7 +56,8 @@ texture = ExtResource("1_ei544")
 5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_5pvuw"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_pov5n")
 
 [node name="Node2D" type="Node2D" unique_id=1339627224]
@@ -67,7 +68,10 @@ tile_map_data = PackedByteArray("AAAAACcAAAAAAAMAAAAAACYAAAAAAAIAAAAAACUAAAAAAAI
 tile_set = SubResource("TileSet_5pvuw")
 
 [node name="Player" parent="." unique_id=1117096099 instance=ExtResource("2_54lnq")]
-position = Vector2(322, 69)
+position = Vector2(353, 556)
 
-[node name="RigidBody2D" parent="." unique_id=1874907227 instance=ExtResource("3_54lnq")]
-position = Vector2(253, 64)
+[node name="bomb" parent="." unique_id=1316951286 instance=ExtResource("3_54lnq")]
+position = Vector2(184, 356)
+
+[node name="bomb2" parent="." unique_id=207560589 instance=ExtResource("3_54lnq")]
+position = Vector2(362, 394)
