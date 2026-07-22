@@ -4,7 +4,7 @@ var in_play := false
 var current_round := 0
 var max_rounds := 5
 var round_length:= 40
-var round_pause:= 13.1
+var round_pause:= 12
 
 @onready var round_label = $CanvasLayer/CenterContainer/Label
 
@@ -35,7 +35,7 @@ func start_round(round: int, startTimer: int, roundLength: int) -> void:
 
 	round_label.text = "GO!"	
 	in_play = true
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(1).timeout
 	round_label.text = "ROUND %d\n" % round	
 	for i in range(roundLength - 1, -1, -1):
 		round_label.text = "ROUND %d\n%d" % [round, i]
