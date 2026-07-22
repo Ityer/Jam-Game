@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c1gu5lgfqy830"]
+
+[ext_resource type="Script" uid="uid://b10mlg5yasdfb" path="res://Scenes/CoreGameLoop/ui_and_functionality.gd" id="1_q4u34"]
+
+[node name="GameManager" type="Node" unique_id=1054604195]
+script = ExtResource("1_q4u34")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1401607349]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=1619620719]
+offset_left = 551.0
+offset_top = 3.0
+offset_right = 615.0
+offset_bottom = 43.0
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer" unique_id=1061124532]
+layout_mode = 2
+text = "Begin!"
+horizontal_alignment = 1
