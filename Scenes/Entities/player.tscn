@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cgp5kfmbgv3r3"]
+
+[ext_resource type="Script" uid="uid://bygw5ewhvx26q" path="res://Scenes/Entities/player.gd" id="1_blnjl"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_i8pp0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j6aav"]
+size = Vector2(20, 31)
+
+[node name="Player" type="CharacterBody2D" unique_id=1117096099]
+script = ExtResource("1_blnjl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=349168570]
+position = Vector2(-1.0000001, -16)
+scale = Vector2(20, 30.999998)
+texture = SubResource("CanvasTexture_i8pp0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=249577653]
+position = Vector2(9, -1)
+shape = SubResource("RectangleShape2D_j6aav")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2127678231]
+position = Vector2(0, -125)
+position_smoothing_speed = 3.0
+drag_vertical_enabled = true
+drag_top_margin = 0.4
