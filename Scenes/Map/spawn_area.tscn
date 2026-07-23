@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://clqu618mchgmy"]
+
+[ext_resource type="Script" uid="uid://w1ufhq76dhod" path="res://Scenes/Map/spawn_area.gd" id="1_ww55c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5pvuw"]
+size = Vector2(27, 21)
+
+[node name="SpawnArea" type="Area2D" unique_id=534696446]
+script = ExtResource("1_ww55c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=118001729]
+shape = SubResource("RectangleShape2D_5pvuw")

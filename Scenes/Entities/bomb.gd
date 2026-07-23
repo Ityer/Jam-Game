@@ -12,6 +12,10 @@ enum Direction {
 @export var height := 24.0
 @export var floor_y := 615.0
 
+@export var left_limit := -100.0
+@export var right_limit := 1400.0
+@export var bottom_limit := 0.0
+
 var velocity := Vector2.ZERO
 
 func _ready():
@@ -49,6 +53,19 @@ func _process(delta):
 
 	# Shadow always stays on the floor
 	$Shadow.global_position.y = floor_y
+	
+	
+	if global_position.y > floor_y + bottom_limit:
+		queue_free()
+
+	match direction:
+		Direction.LEFT_TO_RIGHT:
+			if global_position.x > right_limit:
+				queue_free()
+
+		Direction.RIGHT_TO_LEFT:
+			if global_position.x < left_limit:
+				queue_free()
 
 
 func _on_body_entered(body: Node2D) -> void:

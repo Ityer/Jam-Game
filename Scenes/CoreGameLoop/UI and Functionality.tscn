@@ -8,10 +8,10 @@ script = ExtResource("1_q4u34")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1401607349]
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=1619620719]
-offset_left = 551.0
-offset_top = 3.0
-offset_right = 615.0
-offset_bottom = 43.0
+offset_left = 550.0
+offset_top = 28.0
+offset_right = 614.0
+offset_bottom = 68.0
 
 [node name="Label" type="Label" parent="CanvasLayer/CenterContainer" unique_id=1061124532]
 layout_mode = 2

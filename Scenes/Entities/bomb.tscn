@@ -13,8 +13,7 @@ collision_layer = 4
 script = ExtResource("1_q7i26")
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=1271981538]
-position = Vector2(5.437501, -25.5625)
-scale = Vector2(0.29003906, 0.29003906)
+scale = Vector2(0.385, 0.385)
 texture = ExtResource("2_1h38g")
 
 [node name="BombSprite" type="Sprite2D" parent="." unique_id=830623862]

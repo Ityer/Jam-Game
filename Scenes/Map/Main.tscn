@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://co3l2lkiyjmaq" path="res://Assets/Tileset/1_PenguinWorld1_Tileset_1.png" id="1_ei544"]
 [ext_resource type="PackedScene" uid="uid://cgp5kfmbgv3r3" path="res://Scenes/Entities/player.tscn" id="2_54lnq"]
 [ext_resource type="PackedScene" uid="uid://c1gu5lgfqy830" path="res://Scenes/CoreGameLoop/UI and Functionality.tscn" id="3_54lnq"]
+[ext_resource type="PackedScene" uid="uid://clqu618mchgmy" path="res://Scenes/Map/spawn_area.tscn" id="3_pov5n"]
+[ext_resource type="PackedScene" uid="uid://3myusvccu3rf" path="res://Scenes/Entities/bomb.tscn" id="4_bu7j3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pov5n"]
 texture = ExtResource("1_ei544")
@@ -71,3 +73,20 @@ tile_set = SubResource("TileSet_5pvuw")
 position = Vector2(353, 556)
 
 [node name="GameManager" parent="." unique_id=1054604195 instance=ExtResource("3_54lnq")]
+
+[node name="Top" parent="." unique_id=534696446 instance=ExtResource("3_pov5n")]
+position = Vector2(596, -328)
+bomb_scene = ExtResource("4_bu7j3")
+spawn_size = Vector2(1100, 20)
+
+[node name="Left" parent="." unique_id=1578806559 instance=ExtResource("3_pov5n")]
+position = Vector2(-152, 223)
+side = 1
+bomb_scene = ExtResource("4_bu7j3")
+spawn_size = Vector2(20, 700)
+
+[node name="Right" parent="." unique_id=2024963104 instance=ExtResource("3_pov5n")]
+position = Vector2(1309, 223)
+side = 2
+bomb_scene = ExtResource("4_bu7j3")
+spawn_size = Vector2(20, 700)
