@@ -21,7 +21,18 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	handleAnimation()
 	move_and_slide()
 func hit():
 	pass
+	
+	
+func handleAnimation():
+	if !is_on_floor():
+		$AnimatedSprite2D.play("jump")
+	elif velocity.x > 0:
+		$AnimatedSprite2D.play("right")
+	elif velocity.x < 0:
+		$AnimatedSprite2D.play("left")
+	else:
+		$AnimatedSprite2D.play("idle")
