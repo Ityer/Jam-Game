@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b3x0jnvcqj5jm" path="res://Assets/Sprite/Character.png" id="2_nqm6o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j6aav"]
-size = Vector2(32, 69)
+size = Vector2(33, 56)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yqx0t"]
 atlas = ExtResource("2_nqm6o")
@@ -62,7 +62,7 @@ collision_mask = 7
 script = ExtResource("1_blnjl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=249577653]
-position = Vector2(0, 1.5)
+position = Vector2(0.5, 11)
 shape = SubResource("RectangleShape2D_j6aav")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=485291543]
@@ -72,7 +72,6 @@ sprite_frames = SubResource("SpriteFrames_5w3bn")
 animation = &"idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2127678231]
-position = Vector2(1, -81)
 zoom = Vector2(2.935, 2.935)
 position_smoothing_speed = 3.0
 drag_vertical_enabled = true
