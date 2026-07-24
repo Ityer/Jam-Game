@@ -2,18 +2,30 @@
 
 [ext_resource type="Script" uid="uid://b10mlg5yasdfb" path="res://Scenes/CoreGameLoop/ui_and_functionality.gd" id="1_q4u34"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_nqm6o"]
+font_size = 57
+
 [node name="GameManager" type="Node" unique_id=1054604195]
 script = ExtResource("1_q4u34")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1401607349]
 
+[node name="UI" type="Node" parent="CanvasLayer" unique_id=1075368939]
+
+[node name="Hearts" type="HBoxContainer" parent="CanvasLayer/UI" unique_id=270454574]
+offset_left = 77.0
+offset_top = 56.0
+offset_right = 117.0
+offset_bottom = 96.0
+
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=1619620719]
-offset_left = 550.0
-offset_top = 28.0
-offset_right = 614.0
-offset_bottom = 68.0
+offset_left = 862.0
+offset_top = 26.0
+offset_right = 1032.0
+offset_bottom = 104.0
 
 [node name="Label" type="Label" parent="CanvasLayer/CenterContainer" unique_id=1061124532]
 layout_mode = 2
 text = "Begin!"
+label_settings = SubResource("LabelSettings_nqm6o")
 horizontal_alignment = 1

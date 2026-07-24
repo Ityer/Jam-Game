@@ -20,19 +20,20 @@ var velocity := Vector2.ZERO
 
 func _ready():
 	var sprite = $BombSprite
+	sprite.play("default")
 
 	match direction:
 		Direction.DOWN:
 			velocity = Vector2.DOWN
-			sprite.rotation_degrees = 0
+			sprite.rotation_degrees = 90
 
 		Direction.LEFT_TO_RIGHT:
 			velocity = Vector2.RIGHT
-			sprite.rotation_degrees = 90
+			sprite.rotation_degrees = 0
 
 		Direction.RIGHT_TO_LEFT:
 			velocity = Vector2.LEFT
-			sprite.rotation_degrees = -90
+			sprite.rotation_degrees = 180
 
 
 func _process(delta):

@@ -4,6 +4,8 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -750.0
 
+@export var health:int = 3
+@onready var ui = get_tree().current_scene.get_node("GameManager")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -24,7 +26,8 @@ func _physics_process(delta: float) -> void:
 	handleAnimation()
 	move_and_slide()
 func hit():
-	pass
+	health -= 1
+	ui.set_health(health, 3)
 	
 	
 func handleAnimation():

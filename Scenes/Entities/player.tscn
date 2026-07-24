@@ -4,7 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://b3x0jnvcqj5jm" path="res://Assets/Sprite/Character.png" id="2_nqm6o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j6aav"]
-size = Vector2(31, 45)
+size = Vector2(32, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqx0t"]
+atlas = ExtResource("2_nqm6o")
+region = Rect2(2048, 2048, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1rq5"]
+atlas = ExtResource("2_nqm6o")
+region = Rect2(2048, 0, 2048, 2048)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qbyki"]
 atlas = ExtResource("2_nqm6o")
@@ -14,19 +22,11 @@ region = Rect2(0, 2048, 2048, 2048)
 atlas = ExtResource("2_nqm6o")
 region = Rect2(0, 0, 2048, 2048)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a1rq5"]
-atlas = ExtResource("2_nqm6o")
-region = Rect2(2048, 0, 2048, 2048)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yqx0t"]
-atlas = ExtResource("2_nqm6o")
-region = Rect2(2048, 2048, 2048, 2048)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_5w3bn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qbyki")
+"texture": SubResource("AtlasTexture_yqx0t")
 }],
 "loop": 1,
 "name": &"idle",
@@ -34,7 +34,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_svftf")
+"texture": SubResource("AtlasTexture_a1rq5")
 }],
 "loop": 1,
 "name": &"jump",
@@ -42,7 +42,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_a1rq5")
+"texture": SubResource("AtlasTexture_qbyki")
 }],
 "loop": 1,
 "name": &"left",
@@ -50,7 +50,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yqx0t")
+"texture": SubResource("AtlasTexture_svftf")
 }],
 "loop": 1,
 "name": &"right",
@@ -62,17 +62,18 @@ collision_mask = 7
 script = ExtResource("1_blnjl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=249577653]
-position = Vector2(10.5, 1.9999992)
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_j6aav")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=485291543]
-position = Vector2(10.5, 1.9999992)
-scale = Vector2(0.015136718, 0.022460938)
+position = Vector2(1, 0)
+scale = Vector2(0.024, 0.039)
 sprite_frames = SubResource("SpriteFrames_5w3bn")
-animation = &"right"
+animation = &"idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2127678231]
-position = Vector2(0, -125)
+position = Vector2(1, -81)
+zoom = Vector2(2.935, 2.935)
 position_smoothing_speed = 3.0
 drag_vertical_enabled = true
 drag_top_margin = 0.4

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oponv8cxgaom"
-path="res://.godot/imported/Character.png-10618378987eff97e413a2de394aba17.ctex"
+uid="uid://bqq8ssm5bxfyd"
+path="res://.godot/imported/Missles.png-1d373a792ce7ea947a16d46ce407a574.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/NewArt/Character.png"
-dest_files=["res://.godot/imported/Character.png-10618378987eff97e413a2de394aba17.ctex"]
+source_file="res://Assets/NewArt/Missles.png"
+dest_files=["res://.godot/imported/Missles.png-1d373a792ce7ea947a16d46ce407a574.ctex"]
 
 [params]
 

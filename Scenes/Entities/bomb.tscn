@@ -1,12 +1,51 @@
 [gd_scene format=3 uid="uid://3myusvccu3rf"]
 
-[ext_resource type="Texture2D" uid="uid://cgt2rgrqviv08" path="res://Assets/Bullet.png" id="1_4jre5"]
 [ext_resource type="Script" uid="uid://c7q4jf0ukk2ae" path="res://Scenes/Entities/bomb.gd" id="1_q7i26"]
 [ext_resource type="Texture2D" uid="uid://nhrawli717hj" path="res://Assets/shaddow.png" id="2_1h38g"]
+[ext_resource type="Texture2D" uid="uid://bqq8ssm5bxfyd" path="res://Assets/NewArt/Missles.png" id="3_1h38g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1c80"]
+atlas = ExtResource("3_1h38g")
+region = Rect2(0, 0, 2048, 431)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_102st"]
+atlas = ExtResource("3_1h38g")
+region = Rect2(0, 431, 2048, 431)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_110hp"]
+atlas = ExtResource("3_1h38g")
+region = Rect2(0, 862, 2048, 431)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thdig"]
+atlas = ExtResource("3_1h38g")
+region = Rect2(0, 1293, 2048, 431)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5pvuw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1c80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_102st")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_110hp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thdig")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 9.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5pvuw"]
-radius = 9.0
-height = 28.0
+radius = 13.0
+height = 62.82048
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5pvuw"]
+size = Vector2(12.543093, 15.79392)
 
 [node name="bomb" type="Area2D" unique_id=1316951286]
 collision_layer = 4
@@ -16,12 +55,20 @@ script = ExtResource("1_q7i26")
 scale = Vector2(0.385, 0.385)
 texture = ExtResource("2_1h38g")
 
-[node name="BombSprite" type="Sprite2D" parent="." unique_id=830623862]
-position = Vector2(-8.940697e-08, -3.5762787e-07)
-scale = Vector2(0.15625, 0.1171875)
-texture = ExtResource("1_4jre5")
+[node name="BombSprite" type="AnimatedSprite2D" parent="." unique_id=242436732]
+position = Vector2(1, 8)
+rotation = -1.5707964
+scale = Vector2(0.066, 0.066)
+sprite_frames = SubResource("SpriteFrames_5pvuw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=439488974]
+position = Vector2(1, -16)
+scale = Vector2(1, 1.5600008)
 shape = SubResource("CapsuleShape2D_5pvuw")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1977738501]
+position = Vector2(1, 43.000004)
+scale = Vector2(2.2699993, -2.3426738)
+shape = SubResource("RectangleShape2D_5pvuw")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

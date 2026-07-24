@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://xymani7lnpbf"]
+
+[ext_resource type="Texture2D" uid="uid://c2eukuw50u7bu" path="res://Assets/Sprite/heart.png" id="1_8tyh6"]
+
+[node name="TextureRect" type="TextureRect" unique_id=600369151]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_8tyh6")

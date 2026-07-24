@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cgp5kfmbgv3r3" path="res://Scenes/Entities/player.tscn" id="2_54lnq"]
 [ext_resource type="PackedScene" uid="uid://c1gu5lgfqy830" path="res://Scenes/CoreGameLoop/UI and Functionality.tscn" id="3_54lnq"]
 [ext_resource type="PackedScene" uid="uid://clqu618mchgmy" path="res://Scenes/Map/spawn_area.tscn" id="3_pov5n"]
+[ext_resource type="PackedScene" uid="uid://xymani7lnpbf" path="res://Scenes/Entities/heart.tscn" id="4_1kjb2"]
 [ext_resource type="PackedScene" uid="uid://3myusvccu3rf" path="res://Scenes/Entities/bomb.tscn" id="4_bu7j3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pov5n"]
@@ -73,6 +74,7 @@ tile_set = SubResource("TileSet_5pvuw")
 position = Vector2(353, 556)
 
 [node name="GameManager" parent="." unique_id=1054604195 instance=ExtResource("3_54lnq")]
+heart_scene = ExtResource("4_1kjb2")
 
 [node name="Top" parent="." unique_id=534696446 instance=ExtResource("3_pov5n")]
 position = Vector2(596, -328)
