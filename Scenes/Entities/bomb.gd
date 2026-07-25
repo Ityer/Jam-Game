@@ -15,12 +15,15 @@ enum Direction {
 @export var left_limit := -100.0
 @export var right_limit := 1400.0
 @export var bottom_limit := 0.0
+@onready var ui = get_tree().current_scene.get_node("GameManager")
+const EXPLOSION = preload("res://Assets/explosion.tscn")
 
 var velocity := Vector2.ZERO
 
 func _ready():
 	var sprite = $BombSprite
 	sprite.play("default")
+	add_to_group("bombs")
 
 	match direction:
 		Direction.DOWN:
@@ -71,5 +74,13 @@ func _process(delta):
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
+		if body.invulnerable:
+			return
+
+		var explosion = EXPLOSION.instantiate()
+		get_tree().current_scene.add_child(explosion)
+		explosion.global_position = global_position
+
+		ui.explodePlay()
 		body.hit()
 		queue_free()

@@ -11,7 +11,12 @@ var round_pause:= 12
 @onready var round_label = $CanvasLayer/CenterContainer/Label
 @onready var popup = $CanvasLayer/UI/Popup
 @onready var hearts = $CanvasLayer/UI/Hearts
+@onready var music = $gameMusic
+@onready var explode = $explode
+@onready var jump = $jump
 @onready var player = get_tree().current_scene.get_node("Player")
+
+
 
 
 
@@ -23,6 +28,7 @@ func _ready() -> void:
 	
 	
 func startGame():
+	music.play(0.0)
 	await get_tree().create_timer(2).timeout
 	for i in range(max_rounds):
 		await start_round(i+1, 5, round_length)		
@@ -34,13 +40,9 @@ func startGame():
 	round_label.text = "YOU WIN!"	
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
-
-func start_round(round: int, startTimer: int, roundLength: int) -> void:
-	current_round = round
+func start_round(roundid: int, startTimer: int, roundLength: int) -> void:
+	current_round = roundid
 	in_play = false
 	game_over = false
 	set_health(3,3)
@@ -53,13 +55,13 @@ func start_round(round: int, startTimer: int, roundLength: int) -> void:
 	in_play = true
 	await get_tree().create_timer(1).timeout
 	if game_over: return
-	round_label.text = "ROUND %d\n" % round	
+	round_label.text = "ROUND %d\n" % roundid	
 	for i in range(roundLength - 1, -1, -1):
-		round_label.text = "ROUND %d\n%d" % [round, i]
+		round_label.text = "ROUND %d\n%d" % [roundid, i]
 		await get_tree().create_timer(1).timeout
 		if game_over: return
 		
-	round_label.text = "ROUND %d COMPLETE!" % round
+	round_label.text = "ROUND %d COMPLETE!" % roundid
 	in_play = false
 
 
@@ -82,9 +84,17 @@ func set_health(current: int, maximum: int):
 			game_over = true
 			round_label.text = ""
 			popup.show()
+			for bomb in get_tree().get_nodes_in_group("bombs"):
+				bomb.queue_free()
 
 
 func _on_button_pressed() -> void:
 	popup.hide()
 	player.health = 3
 	startGame()
+
+func explodePlay():
+	explode.play(0.0)
+	
+func jumpPlay():
+	jump.play(0.0)

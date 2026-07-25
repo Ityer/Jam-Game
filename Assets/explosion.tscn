@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://er4s2u6hpg3w"]
+
+[ext_resource type="Texture2D" uid="uid://ce4b823g1c21k" path="res://Assets/Sprite/dot.png" id="1_6dhtp"]
+[ext_resource type="Script" uid="uid://duss61atavos" path="res://Assets/gpu_particles_2d.gd" id="2_708lt"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5pvuw"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.099999994
+scale_max = 0.19999999
+
+[node name="Explosion" type="Node2D" unique_id=1710491611]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=304989869]
+emitting = false
+amount = 50
+texture = ExtResource("1_6dhtp")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_5pvuw")
+script = ExtResource("2_708lt")

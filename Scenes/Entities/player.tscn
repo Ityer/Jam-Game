@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b3x0jnvcqj5jm" path="res://Assets/Sprite/Character.png" id="2_nqm6o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j6aav"]
-size = Vector2(33, 56)
+size = Vector2(41, 61)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yqx0t"]
 atlas = ExtResource("2_nqm6o")
@@ -62,7 +62,7 @@ collision_mask = 7
 script = ExtResource("1_blnjl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=249577653]
-position = Vector2(0.5, 11)
+position = Vector2(-0.5, 8.5)
 shape = SubResource("RectangleShape2D_j6aav")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=485291543]

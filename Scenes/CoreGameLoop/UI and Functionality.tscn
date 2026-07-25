@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://b10mlg5yasdfb" path="res://Scenes/CoreGameLoop/ui_and_functionality.gd" id="1_q4u34"]
 [ext_resource type="Texture2D" uid="uid://c6yl5bajijyq2" path="res://Assets/Tileset/menu.png" id="2_i5vub"]
+[ext_resource type="AudioStream" uid="uid://yhrygjs6tjsy" path="res://Assets/Music/BGM_Music.wav" id="3_14cws"]
+[ext_resource type="AudioStream" uid="uid://bnroyi1qnqayi" path="res://Assets/Music/SFX_Explosion.wav" id="3_v8svk"]
+[ext_resource type="AudioStream" uid="uid://c3uojlbwh1eh0" path="res://Assets/Music/SFX_Jump.wav" id="4_u0ki6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_37okk"]
 font_size = 70
@@ -12,6 +15,17 @@ font_size = 57
 
 [node name="GameManager" type="Node" unique_id=1054604195]
 script = ExtResource("1_q4u34")
+
+[node name="gameMusic" type="AudioStreamPlayer2D" parent="." unique_id=298832226]
+stream = ExtResource("3_14cws")
+volume_db = -7.832
+
+[node name="explode" type="AudioStreamPlayer2D" parent="." unique_id=1837756550]
+stream = ExtResource("3_v8svk")
+
+[node name="jump" type="AudioStreamPlayer2D" parent="." unique_id=1589352683]
+stream = ExtResource("4_u0ki6")
+volume_db = -8.703
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1401607349]
 
