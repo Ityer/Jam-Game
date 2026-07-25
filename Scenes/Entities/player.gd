@@ -7,6 +7,7 @@ const JUMP_VELOCITY = -750.0
 @export var health:int = 3
 @onready var ui = get_tree().current_scene.get_node("GameManager")
 
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():

@@ -6,16 +6,19 @@ var current_round := 0
 var max_rounds := 5
 var round_length:= 40
 var round_pause:= 12
-
-@onready var round_label = $CanvasLayer/CenterContainer/Label
-
-
 @export var heart_scene: PackedScene
 
+@onready var round_label = $CanvasLayer/CenterContainer/Label
+@onready var popup = $CanvasLayer/UI/Popup
 @onready var hearts = $CanvasLayer/UI/Hearts
+@onready var player = get_tree().current_scene.get_node("Player")
+
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	set_health(3, 3)
+	popup.hide()
 	await startGame()
 	
 	
@@ -39,6 +42,8 @@ func _process(delta: float) -> void:
 func start_round(round: int, startTimer: int, roundLength: int) -> void:
 	current_round = round
 	in_play = false
+	game_over = false
+	set_health(3,3)
 
 	for i in range(startTimer - 1, -1, -1):
 		round_label.text = str(i)
@@ -75,4 +80,11 @@ func set_health(current: int, maximum: int):
 		if current == 0:
 			in_play = false
 			game_over = true
-			round_label.text = "GAME OVER"
+			round_label.text = ""
+			popup.show()
+
+
+func _on_button_pressed() -> void:
+	popup.hide()
+	player.health = 3
+	startGame()
