@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -750.0
+const JUMP_VELOCITY = -600.0
 
 @export var health:int = 3
 @onready var ui = get_tree().current_scene.get_node("GameManager")

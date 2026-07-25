@@ -72,7 +72,7 @@ sprite_frames = SubResource("SpriteFrames_5w3bn")
 animation = &"idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2127678231]
-zoom = Vector2(2.935, 2.935)
+zoom = Vector2(2.485, 2.485)
 position_smoothing_speed = 3.0
 drag_vertical_enabled = true
 drag_top_margin = 0.4
