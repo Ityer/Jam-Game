@@ -28,8 +28,8 @@ func _ready() -> void:
 	
 	
 func startGame():
-	music.play(0.0)
 	await get_tree().create_timer(2).timeout
+	music.play(0.0)
 	for i in range(max_rounds):
 		await start_round(i+1, 5, round_length)		
 		if game_over: return
@@ -45,6 +45,7 @@ func start_round(roundid: int, startTimer: int, roundLength: int) -> void:
 	current_round = roundid
 	in_play = false
 	game_over = false
+	player.health = 3
 	set_health(3,3)
 
 	for i in range(startTimer - 1, -1, -1):

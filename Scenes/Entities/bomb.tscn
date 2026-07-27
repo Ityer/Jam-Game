@@ -41,11 +41,11 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5pvuw"]
-radius = 16.0
-height = 62.82048
+radius = 7.0
+height = 35.897415
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5pvuw"]
-size = Vector2(12.543093, 15.79392)
+size = Vector2(7.9295177, 9.817841)
 
 [node name="bomb" type="Area2D" unique_id=1316951286]
 collision_layer = 4
@@ -58,16 +58,16 @@ texture = ExtResource("2_1h38g")
 [node name="BombSprite" type="AnimatedSprite2D" parent="." unique_id=242436732]
 position = Vector2(1, 8)
 rotation = -1.5707964
-scale = Vector2(0.066, 0.066)
+scale = Vector2(0.044, 0.044)
 sprite_frames = SubResource("SpriteFrames_5pvuw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=439488974]
-position = Vector2(1, -16)
+position = Vector2(1, -7.9999995)
 scale = Vector2(1, 1.5600008)
 shape = SubResource("CapsuleShape2D_5pvuw")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1977738501]
-position = Vector2(1, 43.000004)
+position = Vector2(1, 32.5)
 scale = Vector2(2.2699993, -2.3426738)
 shape = SubResource("RectangleShape2D_5pvuw")
 

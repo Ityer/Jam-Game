@@ -16,14 +16,14 @@ font_size = 57
 [node name="GameManager" type="Node" unique_id=1054604195]
 script = ExtResource("1_q4u34")
 
-[node name="gameMusic" type="AudioStreamPlayer2D" parent="." unique_id=298832226]
+[node name="gameMusic" type="AudioStreamPlayer" parent="." unique_id=1831156580]
 stream = ExtResource("3_14cws")
 volume_db = -7.832
 
-[node name="explode" type="AudioStreamPlayer2D" parent="." unique_id=1837756550]
+[node name="explode" type="AudioStreamPlayer" parent="." unique_id=799411331]
 stream = ExtResource("3_v8svk")
 
-[node name="jump" type="AudioStreamPlayer2D" parent="." unique_id=1589352683]
+[node name="jump" type="AudioStreamPlayer" parent="." unique_id=1199337134]
 stream = ExtResource("4_u0ki6")
 volume_db = -8.703
 
@@ -64,10 +64,10 @@ theme_override_font_sizes/font_size = 39
 text = "Try Again"
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=1619620719]
-offset_left = 862.0
-offset_top = 26.0
-offset_right = 1032.0
-offset_bottom = 104.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 78.0
+grow_horizontal = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/CenterContainer" unique_id=1061124532]
 layout_mode = 2

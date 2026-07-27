@@ -28,15 +28,15 @@ func _ready():
 	match direction:
 		Direction.DOWN:
 			velocity = Vector2.DOWN
-			sprite.rotation_degrees = 90
+			rotation_degrees = 180
 
 		Direction.LEFT_TO_RIGHT:
 			velocity = Vector2.RIGHT
-			sprite.rotation_degrees = 0
+			rotation_degrees = 90
 
 		Direction.RIGHT_TO_LEFT:
 			velocity = Vector2.LEFT
-			sprite.rotation_degrees = 180
+			rotation_degrees = 270
 
 
 func _process(delta):
